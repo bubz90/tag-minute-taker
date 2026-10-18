@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tag Minute Taker</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-screen bg-[#d4d0c8] font-mono text-sm text-gray-900 flex flex-col p-2 gap-2">
+  <header class="bg-gradient-to-r from-blue-800 to-blue-500 text-white px-2 py-1 font-bold border border-gray-600">
+    Tag Minute Taker <span class="font-normal text-xs opacity-80">- first word = speaker tag</span>
+  </header>
+
+  <!-- Topic tabs -->
+  <nav class="flex items-end gap-1 relative">
+    <div id="tabs" class="flex gap-1"></div>
+    <div class="relative">
+      <button id="moreTopics" class="px-2 py-1 border border-gray-500 bg-[#ece9d8] hover:bg-white" title="Other topics">&#9660;</button>
+      <ul id="topicMenu" class="hidden absolute left-0 top-full z-10 min-w-[10rem] max-h-64 overflow-y-auto bg-white border border-gray-600 shadow"></ul>
+    </div>
+    <button id="addTopic" class="px-2 py-1 border border-gray-500 bg-[#ece9d8] hover:bg-white" title="New topic">+ Topic</button>
+  </nav>
+
+  <main class="flex-1 flex gap-2 min-h-0">
+    <section id="log" class="flex-1 overflow-y-auto bg-white border-2 border-gray-500 p-2 leading-relaxed"></section>
+    <aside class="w-40 bg-white border-2 border-gray-500 p-2 overflow-y-auto hidden sm:block">
+      <div class="font-bold border-b border-gray-400 mb-1">Participants</div>
+      <ul id="actors"></ul>
+    </aside>
+  </main>
+
+  <form id="form" class="flex gap-2">
+    <input id="input" type="text" autocomplete="off" autofocus
+      placeholder="<speaker> <message> (/help for commands)"
+      class="flex-1 border-2 border-gray-500 bg-white px-2 py-1 focus:outline-none focus:border-blue-600">
+    <button type="submit" class="px-4 border border-gray-600 bg-[#ece9d8] hover:bg-white font-bold">Send</button>
+  </form>
+
+  <script src="app.js"></script>
+</body>
+</html>
